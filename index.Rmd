@@ -1,5 +1,5 @@
 ---
-title: "p8105_hw4_cac2225 Introductory page"
+title: "p8105_hw4_cac2225"
 ---
 
 #Introduction
@@ -13,3 +13,9 @@ To address problem 1 of hw assignment 4, this is my introductory page.
 A link to a page containing my academic and professional experience can be found [here](resume.html).
 
 A link in the site navigation includes a link to my GitHub account, my email and my other professional networks.
+
+## Problem 2
+
+Check out my plotly plot plots [here](plot.html)! Aren't they beautiful.
+
+

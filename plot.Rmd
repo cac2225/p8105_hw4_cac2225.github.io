@@ -1,0 +1,35 @@
+---
+title: "plot"
+author: "Courtney Chan"
+date: "October 28, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Problem 2 plots for HW 4
+
+Loading the necessary libraries.
+
+```{r loading packages}
+library(tidyverse)
+library(viridis)
+
+library(p8105.datasets)
+
+library(plotly)
+```
+
+
+```{r naming dataset and values}
+
+instacart = janitor::clean_names(instacart)
+
+instacart = instacart %>% 
+  mutate(order_dow = recode(order_dow, `0` = "Sunday", `1` = "Monday", `2` = "Tuesday", `3` = "Wednesday", `4` = "Thursday", `5` = "Friday", `6` = "Saturday"))
+
+```
+
+

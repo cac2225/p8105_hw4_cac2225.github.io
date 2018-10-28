@@ -9,9 +9,11 @@
 <meta name="generator" content="pandoc" />
 
 
+<meta name="author" content="Courtney Chan" />
 
+<meta name="date" content="2018-10-28" />
 
-<title>p8105_hw4_cac2225</title>
+<title>plot</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -213,24 +215,45 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">p8105_hw4_cac2225</h1>
+<h1 class="title toc-ignore">plot</h1>
+<h4 class="author"><em>Courtney Chan</em></h4>
+<h4 class="date"><em>October 28, 2018</em></h4>
 
 </div>
 
 
-<div id="introduction" class="section level1">
-<h1>Introduction</h1>
-<p>This is my personal website.</p>
-<div id="problem-1" class="section level2">
-<h2>Problem 1</h2>
-<p>To address problem 1 of hw assignment 4, this is my introductory page.</p>
-<p>A link to a page containing my academic and professional experience can be found <a href="resume.html">here</a>.</p>
-<p>A link in the site navigation includes a link to my GitHub account, my email and my other professional networks.</p>
-</div>
-<div id="problem-2" class="section level2">
-<h2>Problem 2</h2>
-<p>Check out my plotly plot plots <a href="plot.html">here</a>! Aren’t they beautiful.</p>
-</div>
+<div id="problem-2-plots-for-hw-4" class="section level2">
+<h2>Problem 2 plots for HW 4</h2>
+<p>Loading the necessary libraries.</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## -- Attaching packages ------------------</code></pre>
+<pre><code>## v ggplot2 3.0.0     v purrr   0.2.5
+## v tibble  1.4.2     v dplyr   0.7.6
+## v tidyr   0.8.1     v stringr 1.3.1
+## v readr   1.1.1     v forcats 0.3.0</code></pre>
+<pre><code>## -- Conflicts -- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(viridis)</code></pre>
+<pre><code>## Loading required package: viridisLite</code></pre>
+<pre class="r"><code>library(p8105.datasets)
+
+library(plotly)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;plotly&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
+## 
+##     last_plot</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     filter</code></pre>
+<pre><code>## The following object is masked from &#39;package:graphics&#39;:
+## 
+##     layout</code></pre>
+<pre class="r"><code>instacart = janitor::clean_names(instacart)
+
+instacart = instacart %&gt;% 
+  mutate(order_dow = recode(order_dow, `0` = &quot;Sunday&quot;, `1` = &quot;Monday&quot;, `2` = &quot;Tuesday&quot;, `3` = &quot;Wednesday&quot;, `4` = &quot;Thursday&quot;, `5` = &quot;Friday&quot;, `6` = &quot;Saturday&quot;))</code></pre>
 </div>
 
 
