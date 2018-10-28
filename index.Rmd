@@ -10,6 +10,6 @@ This is my personal website.
 
 To address problem 1 of hw assignment 4, this is my introductory page.
 
-A link to a page containing my academic and professional experience can be found here.
+A link to a page containing my academic and professional experience can be found [here](resume.html).
 
 A link in the site navigation includes a link to my GitHub account, my email and my other professional networks.

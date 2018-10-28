@@ -1,0 +1,39 @@
+---
+title: "Resume Page"
+output: html_document
+---
+
+##Education
+
+
+Columbia University, Mailman School of Public Health, New York, NY	May 2019
+MPH, 
+
+Epidemiology, Advanced Epidemiology Certificate
+Relevant Coursework: 
+
+Research Data Coordination, Design and Conduct of Observational Epidemiology
+
+
+##Experience
+
+###Island Peer Review Organization (IPRO), 
+
+**New Hyde Park, NY June 2018 to August 2018**
+
+**Intern, Managed Care Department**
+
+*   Learned about current     healthcare barriers that Diabetic Medicaid patients currently face and corresponding interventions employed by Medicaid Managed Care Organizations by reviewing PIP reports (Performance Improvement Project).
+*	  Collected information on common elements, themes and variables from PIP reports and worked with managed care team to develop a schematic for a preliminary PIP database. 
+*	  Performed literature reviews to gather information on health care barriers that diabetic patients commonly faced and corresponding interventions.
+*	  Assisted with developing a proposal for a Pennsylvania state intervention addressing social isolation and lack of community engagement amongst autistic adults.
+
+###Columbia University Medical Center, 
+
+**New York, NY July 2016 to July 2017**
+
+**Research/Administrative Intern, The Pancreas Center**
+
+*   Involved with day to day operations of a multidisciplinary center that specializes in endocrine related disease. Rotated through all areas, from reception, administrative office, clinical office and data management. 
+*	  Gained a thorough understanding of the overall structure of a complex, fast paced healthcare organization. Learned about the importance of teamwork, clear lines of communication, personal accountability and strong leadership. 
+*	  Worked with data management team, physicians, and epidemiologists on current and upcoming clinical research studies. Participated in database maintenance and learned about the challenges and solutions involved in maintaining the integrity, consistency and privacy of data. 
