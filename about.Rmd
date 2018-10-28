@@ -4,6 +4,6 @@ title: "About"
 
 ### About this site
 
-Sometimes you need to say a bit about the site -- how it was made, where it's hosted, where the source code can be found. 
+Not much to say about me...
 
-If this is for a project or analysis, I recommend giving some details about the R package versions that you used to create the content.
+I admit I like data science. But not as much as some people....
