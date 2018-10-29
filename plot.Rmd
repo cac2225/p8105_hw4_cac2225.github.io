@@ -28,7 +28,8 @@ Preliminary steps to clean the data and recode the variable names of day of the 
 
 instacart = janitor::clean_names(instacart) %>% mutate(order_dow = recode(order_dow, `0` = "Sunday", `1` = "Monday", `2` = "Tuesday", `3` = "Wednesday", `4` = "Thursday", `5` = "Friday", `6` = "Saturday")) %>% 
   mutate(order_dow = forcats::fct_relevel(order_dow, c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))) %>%
-  rename(hour = order_hour_of_day)
+  rename(hour = order_hour_of_day) %>% 
+  rename( day = order_dow)
 
 ```
 
@@ -57,3 +58,28 @@ samp_instacart %>%
 
 Looking at this plot, as the day goes on, the number of orders greatly increases. The number of orders start to rise at about hour 6, with a sharp increase to peak orders of approximately 400 around 11. From there, the number of orders declines, dropping off more sharply at hour 17.
 
+
+
+##Creating a box plot
+
+```{r creating box plot}
+samp_instacart %>%
+  plot_ly(x = ~day, y = ~hour, type = "box")
+
+```
+
+A boxplot is created to illustrate the distribution of orders made on each day of the week and hour of the day. The median number of orders made throughout all days of the week occurs around 13 orders. Sunday has the smallest window in time that which orders are made - starting at hour 5 to hour 23. Wednesday, Thursday and Friday have the largest time windows during which orders are made.
+
+
+
+##Creating a bar graph
+
+```{r creating bar graph}
+samp_instacart %>%
+  group_by(department) %>%
+  summarize(orders = n()) %>%
+  mutate(department = fct_reorder(department, orders)) %>% plot_ly(x = ~department, y = ~orders, type = "bar")
+
+```
+
+The two departments that received the most orders were produce and dairy/eggs. The two departments that received the least orders were bulk and other.
