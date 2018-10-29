@@ -45,7 +45,9 @@ Column {data-width=650}
 samp_instacart %>%
   group_by(hour) %>%
   summarize(orders = n()) %>% plot_ly(x = ~hour, y = ~orders, type = "scatter", mode = "lines",
-          alpha = 0.5)
+          alpha = 0.5) %>% 
+  layout(
+    title = "Hour vs orders Line Graph")
 
 ```
 
@@ -57,7 +59,9 @@ Column {data-width=350}
 ```{r}
 
 samp_instacart %>%
-  plot_ly(x = ~day, y = ~hour, type = "box")
+  plot_ly(x = ~day, y = ~hour, type = "box") %>% 
+   layout(
+     title = "Distribution of orders by day & hour")
 
 ```
 
@@ -68,6 +72,7 @@ samp_instacart %>%
 samp_instacart %>%
   group_by(department) %>%
   summarize(orders = n()) %>%
-  mutate(department = fct_reorder(department, orders)) %>% plot_ly(x = ~department, y = ~orders, type = "bar")
-
+  mutate(department = fct_reorder(department, orders)) %>% plot_ly(x = ~department, y = ~orders, type = "bar") %>% 
+   layout(
+     title = "Department vs. Orders")
 ```
