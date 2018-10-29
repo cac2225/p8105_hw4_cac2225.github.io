@@ -16,6 +16,6 @@ A link in the site navigation includes a link to my GitHub account, my email and
 
 ## Problem 2
 
-Check out my plotly plot plots [here](plot.html)! Aren't they beautiful.
+Check out my plotly plots within a [dashboard](dashboard_template.html). 
 
 

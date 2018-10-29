@@ -1,0 +1,73 @@
+---
+title: "flex_dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+
+library(tidyverse)
+library(viridis)
+
+library(p8105.datasets)
+
+library(plotly)
+```
+
+```{r naming dataset and values}
+
+instacart = janitor::clean_names(instacart) %>% mutate(order_dow = recode(order_dow, `0` = "Sunday", `1` = "Monday", `2` = "Tuesday", `3` = "Wednesday", `4` = "Thursday", `5` = "Friday", `6` = "Saturday")) %>% 
+  mutate(order_dow = forcats::fct_relevel(order_dow, c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))) %>%
+  rename(hour = order_hour_of_day) %>% 
+  rename( day = order_dow)
+
+```
+
+```{r sample}
+set.seed(1)
+
+samp_instacart = 
+  instacart %>% 
+  sample_n(5000)
+
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A - Line Graph
+
+```{r}
+
+samp_instacart %>%
+  group_by(hour) %>%
+  summarize(orders = n()) %>% plot_ly(x = ~hour, y = ~orders, type = "scatter", mode = "lines",
+          alpha = 0.5)
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B - Boxplot
+
+```{r}
+
+samp_instacart %>%
+  plot_ly(x = ~day, y = ~hour, type = "box")
+
+```
+
+### Chart C - Bargraph
+
+```{r}
+
+samp_instacart %>%
+  group_by(department) %>%
+  summarize(orders = n()) %>%
+  mutate(department = fct_reorder(department, orders)) %>% plot_ly(x = ~department, y = ~orders, type = "bar")
+
+```
