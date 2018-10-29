@@ -9,9 +9,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-##Problem 2 plots for HW 4
+#Problem 2 plots for HW 4
 
-Loading the necessary libraries.
+##Loading the necessary libraries.
 
 ```{r loading packages}
 library(tidyverse)
@@ -22,14 +22,38 @@ library(p8105.datasets)
 library(plotly)
 ```
 
+Preliminary steps to clean the data and recode the variable names of day of the week.
 
 ```{r naming dataset and values}
 
-instacart = janitor::clean_names(instacart)
-
-instacart = instacart %>% 
-  mutate(order_dow = recode(order_dow, `0` = "Sunday", `1` = "Monday", `2` = "Tuesday", `3` = "Wednesday", `4` = "Thursday", `5` = "Friday", `6` = "Saturday"))
+instacart = janitor::clean_names(instacart) %>% mutate(order_dow = recode(order_dow, `0` = "Sunday", `1` = "Monday", `2` = "Tuesday", `3` = "Wednesday", `4` = "Thursday", `5` = "Friday", `6` = "Saturday")) %>% 
+  mutate(order_dow = forcats::fct_relevel(order_dow, c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))) %>%
+  rename(hour = order_hour_of_day)
 
 ```
 
+Since the original datset is too large, I am taking a sample of 5000 observations.
+
+```{r taking a sample of the original data}
+
+samp_instacart = 
+  instacart %>% 
+  sample_n(5000)
+
+```
+
+##Creating a line graph
+
+Using our sample of 5000, I created a line graph, plotting the hour of the day and number of orders received. 
+
+```{r line graph}
+
+samp_instacart %>%
+  group_by(hour) %>%
+  summarize(orders = n()) %>% plot_ly(x = ~hour, y = ~orders, type = "scatter", mode = "lines",
+          alpha = 0.5)
+
+```
+
+Looking at this plot, as the day goes on, the number of orders greatly increases. The number of orders start to rise at about hour 6, with a sharp increase to peak orders of approximately 400 around 11. From there, the number of orders declines, dropping off more sharply at hour 17.
 
