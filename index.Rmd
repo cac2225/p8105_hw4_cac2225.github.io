@@ -1,21 +1,32 @@
----
-title: "p8105_hw4_cac2225"
----
 
 #Introduction
 
 This is my personal website.
 
-## Problem 1
+Name: Courtney Chan
 
-To address problem 1 of hw assignment 4, this is my introductory page.
+Studying: Advanced Epidemiology Certificate, at the Mailman School of Public Health
+
+Current City: New York City
+
+Here are some pictures I've taken of Central Park!
+
+<img src="images/boats.jpg" style="width:75%">
+
+*Boats on the lake*
+
+<img src="images/people.jpg" style="width:75%">
+
+*People picnicking on the lake*
+
+
+## Professional Links
 
 A link to a page containing my academic and professional experience can be found [here](resume.html).
 
 A link in the site navigation includes a link to my GitHub account, my email and my other professional networks.
 
-## Problem 2
+## Plotly Plots
 
 Check out my plotly plots within a [dashboard](dashboard_template.html). 
-
 
