@@ -1,11 +1,9 @@
 
 #Introduction
 
-This is my personal website.
+Hi I'm Courtney and welcome to my personal website.
 
-Name: Courtney Chan
-
-Studying: Advanced Epidemiology Certificate, at the Mailman School of Public Health
+Interests: Epidemiology
 
 Current City: New York City
 
@@ -28,5 +26,5 @@ A link in the site navigation includes a link to my GitHub account, my email and
 
 ## Plotly Plots
 
-Check out my plotly plots within a [dashboard](dashboard_template.html). 
+Check out my plotly plots within a [dashboard](dashboard_template.html). These three graphs are based off of the Instacart dataset and placed within a flex dashboard.
 
